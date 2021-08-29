@@ -21,7 +21,7 @@ def display_teams():
         name_string = ""
         #Print data
         for emp_id in emp_lst:  #For each employee id in the particular team
-            name_string = f"{name_string} | {emp_id}. {employees[emp_id]['name']}"
+            name_string = f"{name_string} | {emp_id}. {employees[emp_id].name}"
         
         print(f"{team_name} => {name_string}")
 
@@ -62,7 +62,7 @@ def list_employees_in_team(team_name):
         #Print data
         
         for emp_id in teams[team_name]:  #For each employee id in the particular team
-            name_string = f"{name_string} | {emp_id}. {employees[emp_id]['name']}"
+            name_string = f"{name_string} | {emp_id}. {employees[emp_id].name}"
     
     print(name_string)
 

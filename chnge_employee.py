@@ -15,7 +15,7 @@ def change_employee_menu():
 def change_joining_date(emp_id):
     join_date = input("Enter new joining date: ")
     if join_date:
-        employees[emp_id]["join_date"] = join_date
+        employees[emp_id].set_join_date(join_date)
     else:
         print("No valid input received. Cannot change employee data.")
 
@@ -23,7 +23,7 @@ def change_joining_date(emp_id):
 def change_previous_company(emp_id):
     pre_company = input("Enter previous company: ")
     if pre_company:
-        employees[emp_id]["previous_company"] = pre_company
+        employees[emp_id].set_previous_company(pre_company)
     else:
         print("No valid input received. Cannot change employee data.")
 
@@ -31,7 +31,7 @@ def change_previous_company(emp_id):
 def change_salary(emp_id):
     salary = input("Enter new employee salary: ")
     if salary:
-        employees[emp_id]["salary"] = salary
+        employees[emp_id].set_salary(salary)
     else:
         print("No valid input received. Cannot change employee data.")
 
@@ -39,7 +39,7 @@ def change_salary(emp_id):
 def change_employee_place(emp_id):
     place = input("Enter new employee place: ")
     if place:
-        employees[emp_id]["place"] = place
+        employees[emp_id].set_place(place)
     else:
         print("No valid input received. Cannot change employee data.")
 
@@ -47,7 +47,7 @@ def change_employee_place(emp_id):
 def change_employee_gender(emp_id):
     gender = input("Enter new employee gender: ")
     if gender:
-        employees[emp_id]["gender"] = gender
+        employees[emp_id].set_gender(gender)
     else:
         print("No valid input received. Cannot change employee data.")
 
@@ -55,7 +55,7 @@ def change_employee_gender(emp_id):
 def change_employee_age(emp_id):
     age = input("Enter new employee age: ")
     if age:
-        employees[emp_id]["age"] = age
+        employees[emp_id].set_age(age)
     else:
         print("No valid input received. Cannot change employee data.")
 
@@ -63,7 +63,7 @@ def change_employee_age(emp_id):
 def change_employee_name(emp_id):
     name = input("Enter new employee name: ")
     if name:
-        employees[emp_id]["name"] = name
+        employees[emp_id].set_name(name)
     else:
         print("No valid input received. Cannot change employee data.")
 

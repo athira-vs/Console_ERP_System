@@ -13,11 +13,11 @@ def search_employee_by_name():
     emp_present = False
     if name:
         for emp_id, employee in employees.items():
-            if employee["name"] == name:
+            if employee.name == name:
                 emp_present = True
                 print(f"\n\tEmployee id: \t {emp_id}")
-                for key in employee:
-                    print(f"\t{key}: \t {employee[key]}")
+                for key in employee.__dict__.keys():
+                    print(f"\t{key}: \t {getattr(employee,key)}")
         if not emp_present:
             print("\t" + name + " is not an employee.")
 
@@ -30,11 +30,11 @@ def search_employee_by_age():
     emp_present = False
     if age:
         for emp_id, employee in employees.items():
-            if employee["age"] == age:
+            if employee.age == age:
                 emp_present = True
                 print(f"\n\tEmployee id: \t {emp_id}")
-                for key in employee:
-                    print(f"\t{key}: \t {employee[key]}")
+                for key in employee.__dict__.keys():
+                    print(f"\t{key}: \t {getattr(employee,key)}")
         if not emp_present:
             print("\t" + age + " is not an age of any employee.")
 
@@ -47,11 +47,11 @@ def search_employee_by_salary():
     emp_present = False
     if salary:
         for emp_id, employee in employees.items():
-            if employee["salary"] == salary:
+            if employee.salary == salary:
                 emp_present = True
                 print(f"\n\tEmployee id: \t {emp_id}")
-                for key in employee:
-                    print(f"\t{key}: \t {employee[key]}")
+                for key in employee.__dict__.keys():
+                    print(f"\t{key}: \t {getattr(employee,key)}")
         if not emp_present:
             print("\t" + salary + " is not salary of any employee.")
 
@@ -64,11 +64,11 @@ def search_employee_by_gender():
     emp_present = False
     if gender:
         for emp_id, employee in employees.items():
-            if employee["gender"] == gender:
+            if employee.gender == gender:
                 emp_present = True
                 print(f"\n\tEmployee id: \t {emp_id}")
-                for key in employee:
-                    print(f"\t{key}: \t {employee[key]}")
+                for key in employee.__dict__.keys():
+                    print(f"\t{key}: \t {getattr(employee,key)}")
         if not emp_present:
             print("\t" + gender + " is not gender of any employee.")
 

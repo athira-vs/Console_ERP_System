@@ -16,15 +16,16 @@ def add_employee():
         if emp_id in employees.keys():
             print("Employee id already exists. Cannot add employee")
         else:
-            temp = {}
-            temp["name"] = name
-            temp["age"] = age
-            temp["gender"] = gender
-            temp["place"] = place
-            temp["salary"] = salary
-            temp["previous_company"] = pre_company
-            temp["join_date"] = join_date
-
+            temp = Employee(emp_id, name, age, gender, place, salary, pre_company, join_date)
+            '''
+            temp.name = name
+            temp.age = age
+            temp.gender = gender
+            temp.place = place
+            temp.salary = salary
+            temp.previous_company = pre_company
+            temp.join_date = join_date
+            '''
             employees[emp_id] = temp
 
             print("Added " +name+ " to employees")
@@ -34,8 +35,9 @@ def delete_employee():
     emp_id = input("Enter employee id to be deleted: ")
     if emp_id:
         if emp_id in employees.keys():
-            name = employees[emp_id]["name"]
+            name = employees[emp_id].name
             del employees[emp_id]
+
             print(f"Deleted {emp_id} : {name} from employees")
 
             #Delete the emp_id from teams
@@ -52,8 +54,9 @@ def delete_employee():
 
 def display_employee():
     for emp_id, employee in employees.items():
-        print(f"\n\tEmployee id: \t {emp_id}")
-        for key in employee:
-            print(f"\t{key} \t {employee[key]}")
+        print("\n")
+        key_list = employee.__dict__.keys()
+        for key in key_list:
+            print(f"\t{key} \t {getattr(employee, key)}")
 
 
