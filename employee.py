@@ -1,6 +1,9 @@
 from var import *
 
 def add_employee():
+    username = input("Enter username: ")
+    password = input("Enter password: ")
+    role = input("Enter role: ")
     emp_id = input("Enter employee id: ")
     name = input("Enter employee name: ")
     age = input("Enter employee age: ")
@@ -10,13 +13,13 @@ def add_employee():
     pre_company = input("Enter previous company: ")
     join_date = input("Enter joining date: ")
         
-    if  not (emp_id and name and age and gender and place and salary and pre_company and join_date):
+    if  not (username and password and role and emp_id and name and age and gender and place and salary and pre_company and join_date):
         print("Cannot add employee without all details. Try again")
     else:
         if emp_id in employees.keys():
             print("Employee id already exists. Cannot add employee")
         else:
-            temp = Employee(emp_id, name, age, gender, place, salary, pre_company, join_date)
+            temp = Employee(username, password, role, emp_id, name, age, gender, place, salary, pre_company, join_date)
             '''
             temp.name = name
             temp.age = age
@@ -55,7 +58,7 @@ def delete_employee():
 def display_employee():
     for emp_id, employee in employees.items():
         print("\n")
-        key_list = employee.__dict__.keys()
+        key_list = [a for a in employee.__dict__.keys() if not (a[0].startswith('__') or a[0].endswith('__') or a[0].startswith('_') )]
         for key in key_list:
             print(f"\t{key} \t {getattr(employee, key)}")
 

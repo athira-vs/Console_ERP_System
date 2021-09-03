@@ -15,9 +15,10 @@ def search_employee_by_name():
         for emp_id, employee in employees.items():
             if employee.name == name:
                 emp_present = True
-                print(f"\n\tEmployee id: \t {emp_id}")
-                for key in employee.__dict__.keys():
-                    print(f"\t{key}: \t {getattr(employee,key)}")
+                #print(f"\n\tEmployee id: \t {emp_id}")
+                key_list = [a for a in employee.__dict__.keys() if not (a[0].startswith('__') or a[0].endswith('__') or a[0].startswith('_') )]
+                for key in key_list:
+                    print(f"\t{key} \t {getattr(employee, key)}")
         if not emp_present:
             print("\t" + name + " is not an employee.")
 
@@ -32,9 +33,9 @@ def search_employee_by_age():
         for emp_id, employee in employees.items():
             if employee.age == age:
                 emp_present = True
-                print(f"\n\tEmployee id: \t {emp_id}")
-                for key in employee.__dict__.keys():
-                    print(f"\t{key}: \t {getattr(employee,key)}")
+                key_list = [a for a in employee.__dict__.keys() if not (a[0].startswith('__') or a[0].endswith('__') or a[0].startswith('_') )]
+                for key in key_list:
+                    print(f"\t{key} \t {getattr(employee, key)}")
         if not emp_present:
             print("\t" + age + " is not an age of any employee.")
 
@@ -49,9 +50,9 @@ def search_employee_by_salary():
         for emp_id, employee in employees.items():
             if employee.salary == salary:
                 emp_present = True
-                print(f"\n\tEmployee id: \t {emp_id}")
-                for key in employee.__dict__.keys():
-                    print(f"\t{key}: \t {getattr(employee,key)}")
+                key_list = [a for a in employee.__dict__.keys() if not (a[0].startswith('__') or a[0].endswith('__') or a[0].startswith('_') )]
+                for key in key_list:
+                    print(f"\t{key} \t {getattr(employee, key)}")
         if not emp_present:
             print("\t" + salary + " is not salary of any employee.")
 
@@ -66,9 +67,9 @@ def search_employee_by_gender():
         for emp_id, employee in employees.items():
             if employee.gender == gender:
                 emp_present = True
-                print(f"\n\tEmployee id: \t {emp_id}")
-                for key in employee.__dict__.keys():
-                    print(f"\t{key}: \t {getattr(employee,key)}")
+                key_list = [a for a in employee.__dict__.keys() if not (a[0].startswith('__') or a[0].endswith('__') or a[0].startswith('_') )]
+                for key in key_list:
+                    print(f"\t{key} \t {getattr(employee, key)}")
         if not emp_present:
             print("\t" + gender + " is not gender of any employee.")
 

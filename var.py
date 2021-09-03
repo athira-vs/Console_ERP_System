@@ -2,8 +2,16 @@ employees = {} # Dict for employee details
 org = {} # Dict for organization details
 teams = {} # Dict for employees team details
 
-class Employee:
-	def __init__(self, emp_id, name, age, gender, place, salary, previous_company, join_date):
+class User:
+	def __init__(self, username, password, role):
+		self.__username = username
+		self.__password = password
+		self.role = role
+
+
+class Employee(User):
+	def __init__(self, username, password, role, emp_id, name, age, gender, place, salary, previous_company, join_date):
+		super().__init__(username, password, role)
 		self.emp_id = emp_id
 		self.name = name
 		self.age = age
