@@ -3,6 +3,7 @@ import team as tm
 import employee as em
 import srch_employee as srch_em
 import chnge_employee as ch_em
+from emp_gui import add_employee_gui
 
 
 def print_main_menu():
@@ -31,7 +32,7 @@ while True:
         choice = int(choice)
     if choice == 1:
         # Add Employee
-        em.add_employee()
+        add_employee_gui()
         
         
     elif choice == 2:
